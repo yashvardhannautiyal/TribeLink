@@ -1,11 +1,18 @@
 import React from 'react'
 import '../index.css';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
-    <div className='text-2xl'>
-      this is the app
+    <div >
+      
+      <Login />
+      <Navbar />
+      <Footer />
     </div>
+
   )
 }
 
