@@ -89,9 +89,6 @@ export default function Login() {
         </div>
       </div>
 </div>
-<div className="text-sm flex justify-center text-center mt-2">
-    <p>Browse without signing in--</p>
-</div>
     </div>
   );
 }
