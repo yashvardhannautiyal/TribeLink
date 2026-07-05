@@ -1,9 +1,13 @@
 import React from 'react'
 
-const HeroSection = () => {
+
+function HeroSection() {
   return (
-    <div>HeroSection</div>
+    <div>
+      this is hero section
+    </div>
   )
 }
 
 export default HeroSection
+
