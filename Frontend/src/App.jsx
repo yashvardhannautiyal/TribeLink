@@ -2,24 +2,18 @@ import React from 'react'
 import '../index.css';
 import Login from './pages/Login/Login';
 import HeroSection from './pages/HomePage/HeroSection';
-import About from './pages/AboutPage/About';
 import {Route, Routes, Outlet} from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage"
-import About from "./pages/About/About";
 import Explore from "./pages/Explore/Explore"
 import Register from "./pages/Register/Register"
 import MainLayout from "./components/MainLayout/MainLayout";
+import About from './pages/AboutPage/About';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div >
-      <Navbar />
-      <HeroSection />
-      <About />
-       <Login />
-      <Footer />
-
-      
+    <div > 
       <Routes>
         <Route path = "/" element={<MainLayout />}>
         <Route index element={<HomePage />} />

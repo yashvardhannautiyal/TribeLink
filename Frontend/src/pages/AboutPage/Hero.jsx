@@ -16,7 +16,7 @@ const Hero = () => {
         skew-y-3 origin-bottom-left"
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10  max-w-5xl mx-auto px-6 text-center">
 
         <span className="inline-block border border-orange-500 rounded-full px-5 py-2 hover:bg-orange-500 hover:text-white text-orange-500 uppercase tracking-[4px] text-xs">
           ⚡ Our Story
