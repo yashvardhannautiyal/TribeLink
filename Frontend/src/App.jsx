@@ -17,9 +17,9 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='about' element={<About />} />
         <Route path='explore' element={<Explore />} />
+        </Route>
         <Route path='register' element={<Register />} />
         <Route path='login' element={<Login />} />
-        </Route>
       </Routes>
     </div>
 
