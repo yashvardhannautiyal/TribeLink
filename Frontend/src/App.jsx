@@ -8,8 +8,8 @@ import Explore from "./pages/Explore/Explore"
 import Register from "./pages/Register/Register"
 import MainLayout from "./components/MainLayout/MainLayout";
 import About from './pages/AboutPage/About';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+// import Navbar from './components/Navbar/Navbar';
+// import Footer from './components/Footer/Footer';
 
 function App() {
   return (
