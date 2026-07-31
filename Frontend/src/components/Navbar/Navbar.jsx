@@ -21,7 +21,7 @@ const Navbar = () => {
         </div>
 
         {/* list item  */}
-        <div className="flex gap-8 text-gray-400 items-center justify-center text-sm font-medium tracking-wide">
+        <div className=" flex gap-8 text-gray-400 items-center justify-center text-sm font-medium tracking-wide">
           <Link to="/" className="hover:text-white transition">
             HOME
           </Link>

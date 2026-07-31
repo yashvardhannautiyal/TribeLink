@@ -44,7 +44,7 @@ const players = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#09090f] text-white ">
+    <section className="relative overflow-hidden bg-[#09090f] text-white  ">
     <div  className="absolute inset-0 opacity-10
         bg-[linear-gradient(rgba(255,255,255,.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.15)_1px,transparent_1px)]
         bg-[size:72px_72px]" />
@@ -58,7 +58,7 @@ function HeroSection() {
                 <Zap size={15} /> The Player Network
                 </span>
                 <h1 className="mt-4 font-black leading-none">
-                  <span className="block text-5xl sm:text-6xl lg:text-6xl">Link Your Tribe</span>
+                  <span className="block text-5xl sm:text-6xl lg:text-6xl">Link Your</span>
                  <span className="block mt-2 text-5xl sm:text-6xl lg:text-6xl text-orange-500 ">
                 Tribe.
               </span>
@@ -74,7 +74,7 @@ function HeroSection() {
               matches, track your performance, and rise through the
               ranks — PS5, Football, Pool, Bowling and more.
             </p>
-             <div className="mt-10 flex flex-col sm:flex-row gap-5">
+             <div className="mt-5 mb-5 flex flex-col sm:flex-row gap-5">
                 <button className="border bg-orange-600/20 border-orange-500 hover:bg-orange-600 transition px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2">
                 JOIN NOW
                 <ArrowRight size={20} />
@@ -85,7 +85,9 @@ function HeroSection() {
               </button>
              </div>
                </div>
-          <div className="relative hidden lg:block md:block md:h-[460px] h-[580px]">
+               {/* right Section */}
+               <div className="animate-[smallBounce_1s_infinite]"> 
+          <div className=" relative hidden lg:block md:block md:h-[460px] h-[580px]">
 
             {players.map((player, index) => (
               <div
@@ -134,8 +136,10 @@ function HeroSection() {
                 </div>
 
               </div>
+              
             ))}
 
+          </div>
           </div>
 
         </div>
