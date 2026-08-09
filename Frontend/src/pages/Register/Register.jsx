@@ -20,7 +20,9 @@ function Register() {
     <div>
       <ProgressBar currStep={currStep} />
 
-      {currStep === 1 && <StepOne />}
+      {currStep === 1 && <StepOne formData = {formData}
+      setFormData = {setFormData}
+      onNext = {() => setCurrStep(2)} />}
 
       {currStep === 2 && <StepTwo />}
 
