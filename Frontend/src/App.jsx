@@ -14,6 +14,7 @@ import About from './pages/AboutPage/About';
 function App() {
   return (
     <div > 
+      
       <Routes>
         <Route path = "/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
