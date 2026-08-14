@@ -1,11 +1,31 @@
-import React from 'react'
+import React from "react";
 
-function InterestCard() {
+function InterestCard({
+  interest,
+  selected,
+  onSelect,
+}) {
   return (
-    <div>
-      this is interest card
-    </div>
-  )
+    <button
+      type="button"
+      onClick={onSelect}
+      aria-pressed={selected}
+    >
+      <span>
+        {interest.icon}
+      </span>
+
+      <span>
+        {interest.name}
+      </span>
+
+      {selected && (
+        <span>
+          ✓
+        </span>
+      )}
+    </button>
+  );
 }
 
-export default InterestCard
+export default InterestCard;

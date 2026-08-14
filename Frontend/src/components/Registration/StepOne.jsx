@@ -1,6 +1,93 @@
-import React from "react";
+import React, {useState} from "react";
 
-function StepOne({formData, setFormData}) {
+function StepOne({formData, setFormData, onNext}) {
+
+  const [errors, setErrors] = useState({
+    username: "",
+    email: "",
+    location: "",
+    password: "",
+  });
+
+
+  //---------------function() - hanle change of data and error
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+
+    //sets form data for particular input field
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    //remove error when user corrects the field
+    setErrors((prev) => ({
+      ...prev,
+      [name] : "",
+    }));
+  };
+
+
+  //---------------function() - validation
+  const validateForm = () => {
+    const newErrors = {
+      username: "",
+      email: "",
+      location: "",
+      password: "",
+    };
+
+    // username 
+    if(formData.username.trim() === ""){
+      newErrors.username = "Username is required.";
+    } else if(formData.username.trim().length < 5){
+      newErrors.username = "Username must be at least 5 characters.";
+    }
+
+    // email
+    if(formData.email.trim() === ""){
+      newErrors.email = "Email is required.";
+    } else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)){
+      newErrors.email = "Enter a valid email address.";
+    }
+
+    //location
+    if (formData.location.trim() === "") {
+      newErrors.location = "Location is required.";
+    }
+
+    // password
+    if (!formData.password) {
+      newErrors.password = "Password is required.";
+    } else if (formData.password.length < 8) {
+      newErrors.password =
+        "Password must be at least 8 characters.";
+    }
+
+    //pass the above errors to setErrors
+    setErrors(newErrors);
+
+    const hasErrors = Object.values(newErrors).some(
+      (err) => err !== ""
+    );
+
+    return !hasErrors;
+  };
+
+
+  //---------------function() - handle submit button
+  const handleSubmit  = (e) => {
+    e.preventDefault();
+
+    const isValid = validateForm();
+
+    if(!isValid){
+      return;
+    }
+
+    onNext();
+  }
+
   return (
     <div className="border-2">
       <div>
@@ -10,7 +97,7 @@ function StepOne({formData, setFormData}) {
 
       <div>
         {/* <form onSubmit={handleSubmit}> */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="username">Username</label>
             <input
@@ -20,12 +107,7 @@ function StepOne({formData, setFormData}) {
               placeholder="@username"
 
               value={formData.username}
-              onChange={(e) => {
-                setFormData({
-                    ...formData,
-                    username : e.target.value,
-                })
-              }}
+              onChange={handleChange}
             />
           </div>
           <div>
@@ -37,12 +119,7 @@ function StepOne({formData, setFormData}) {
               placeholder="yourmail@gmail.com"
 
               value={formData.email}
-              onChange = {(e) => {
-                setFormData({
-                    ...formData,
-                    email : e.target.value,
-                })
-              }}
+             onChange={handleChange}
             />
           </div>
           <div>
@@ -54,12 +131,7 @@ function StepOne({formData, setFormData}) {
               placeholder="city"
 
               value={formData.location}
-              onChange = {(e) => {
-                setFormData({
-                    ...formData,
-                    location : e.target.value,
-                })
-              }}
+              onChange={handleChange}
             />
           </div>
           <div>
@@ -71,12 +143,7 @@ function StepOne({formData, setFormData}) {
               placeholder="*****"
 
               value={formData.password}
-              onChange={(e) =>{
-                setFormData({
-                    ...formData,
-                    password : e.target.value,
-                })
-              }}
+              onChange={handleChange}
             />
           </div>
           <div>
@@ -87,14 +154,11 @@ function StepOne({formData, setFormData}) {
               placeholder="Tell us something about yourself"
 
               value={formData.bio}
-              onChange={(e) =>{
-                setFormData({
-                    ...formData,
-                    bio : e.target.value,
-                })
-              }}
+              onChange={handleChange}
             />
           </div>
+
+          <button type="submit">Continue</button>
         </form>
       </div>
     </div>
