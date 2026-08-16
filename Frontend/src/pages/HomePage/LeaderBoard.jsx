@@ -148,7 +148,7 @@ const PlayerCard = ({ player }) => {
 /* MAIN LEADERBOARD */
 export default function LeaderBoard() {
   return (
-    <section className=" relative min-h-screen overflow-hidden bg-[#08080d] text-white lg:p-3 ">
+    <section className=" relative min-h-screen overflow-hidden bg-[#08080d] text-white lg:p-3 -mt-15 lg:mt-0">
       {/* BACKGROUND GRID */}
       <div className=" pointer-events-none absolute inset-0 opacity-60 [background-image:linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:72px_72px] " />
       {/* Red glow */}

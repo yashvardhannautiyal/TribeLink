@@ -6,23 +6,23 @@ import { useEffect } from "react";
 
 const stats = [
   {
-    number: "6,500+",
+    number: "0+",
     title: "ACTIVE PLAYERS",
     color: "text-red-500",
   },
   {
-    number: "4",
+    number: "7",
     title: "GAME CATEGORIES",
     color: "text-blue-500",
     border: "border-blue-500",
   },
   {
-    number: "1,200+",
+    number: "0+",
     title: "MATCHES PLAYED",
     color: "text-purple-500",
   },
   {
-    number: "2024",
+    number: "2026",
     title: "FOUNDED",
     color: "text-orange-500",
   },
