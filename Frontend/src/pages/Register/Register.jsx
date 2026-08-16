@@ -31,7 +31,8 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="bg-[linear-gradient(rgba(255,255,255,.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.15)_1px,transparent_1px)]
+        bg-[size:72px_72px] py-20 min-h-screen bg-[#09090f] text-white">
       <ProgressBar currStep={currStep} />
 
       {currStep === 1 && (

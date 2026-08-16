@@ -89,7 +89,8 @@ function StepOne({formData, setFormData, onNext}) {
   }
 
   return (
-    <div className="border-2">
+    <div className="flex justify-center">
+    <div className="border">
       <div>
         <h3>Create your TribeLink account</h3>
         <p>Tell the tribe who you are.</p>
@@ -161,6 +162,7 @@ function StepOne({formData, setFormData, onNext}) {
           <button type="submit">Continue</button>
         </form>
       </div>
+    </div>
     </div>
   );
 }
