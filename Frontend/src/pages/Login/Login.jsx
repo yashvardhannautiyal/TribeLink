@@ -5,7 +5,6 @@ import {
   Eye,
   EyeOff,
   ArrowRight,
-  DotIcon,
   Zap,
 } from "lucide-react";
 
@@ -26,16 +25,19 @@ export default function Login() {
             </h1>
           </div>
           {/* logo text  */}
-          <h1 className="mt-0 text-lg font-bold text-center text-white">
+          <div className="text-center py-3">
+          <h1 className="text-lg font-bold text-white">
             Welcome Back
           </h1>
-          <p className="font-medium text-sm  text-gray-500 text-center ">
+          <p className="font-medium text-sm  text-gray-500 ">
             Login with your tribe and dominate together
           </p>
+          </div>
 
           {/* form  */}
-          <div>
-            <div className="mt-3">
+          <form>
+            {/* username  */}
+            <div>
               <label className="font-semibold text-xs text-gray-400">
                 USERNAME
               </label>
@@ -48,6 +50,8 @@ export default function Login() {
                 />
               </div>
             </div>
+
+            {/* password  */}
             <div>
               <label className="font-semibold text-gray-400 text-xs">
                 PASSWORD
@@ -66,6 +70,8 @@ export default function Login() {
                 />
               </div>
             </div>
+
+            {/* button  */}
             <button className=" w-full text-xs cursor-pointer bg-orange-500 hover:bg-orange-600  text-white font-bold py-2.5 px-4 rounded-md mt-4">
               <a href="#"> SIGN IN </a>
               <ArrowRight className="inline-block  ml-1" size={12} />
@@ -76,7 +82,7 @@ export default function Login() {
                 Create an Account
               </a>
             </div>
-          </div>
+          </form>
         </div>
     </div>
   );

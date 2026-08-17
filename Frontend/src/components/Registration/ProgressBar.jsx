@@ -17,11 +17,11 @@ function ProgressBar({ currStep }) {
   ];
 
   return (
-    <div>
+    <div className="flex items-center gap-5">
       {steps.map((step, index) => (
         <React.Fragment key={step.number}>
 
-          <div>
+          <div className="flex items-center gap-2">
             <div>
               {currStep > step.number
                 ? "✓"
