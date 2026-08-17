@@ -1,4 +1,14 @@
 import React, {useState} from "react";
+import {
+  User,
+  Lock,
+  Eye,
+  EyeOff,
+  ArrowRight,
+  DotIcon,
+  Zap,
+} from "lucide-react";
+
 
 function StepOne({formData, setFormData, onNext}) {
 
@@ -89,7 +99,7 @@ function StepOne({formData, setFormData, onNext}) {
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="">
     <div className="border">
       <div>
         <h3>Create your TribeLink account</h3>
@@ -160,6 +170,25 @@ function StepOne({formData, setFormData, onNext}) {
           </div>
 
           <button type="submit">Continue</button>
+
+           <div className=" text-[10px] text-gray-400 mt-4 ">
+              <p>
+                {" "}
+                <DotIcon
+                  className="inline-block  text-orange-500 mr-0"
+                  size={25}
+                />
+                Connect with players near you
+              </p>
+              <p>
+                {" "}
+                <DotIcon
+                  className="inline-block text-purple-500 mr-0"
+                  size={25}
+                />
+                Climb the leaderboard
+              </p>
+            </div>
         </form>
       </div>
     </div>
