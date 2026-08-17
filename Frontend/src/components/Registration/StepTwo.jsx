@@ -36,7 +36,6 @@ function StepTwo({ formData, setFormData, onNext, onBack }) {
   };
 
   return (
-    <div>
       <div className="flex justify-center pt-3">
         <div className="w-md px-8 py-3 rounded-2xl bg-[#101829bd] border border-t-orange-500 border-l-orange-400 border-b-blue-500 border-r-blue-400">
           <div className="text-center pb-2">
@@ -73,7 +72,6 @@ function StepTwo({ formData, setFormData, onNext, onBack }) {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
