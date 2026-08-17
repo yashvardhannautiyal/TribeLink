@@ -10,19 +10,20 @@ function InterestCard({
       type="button"
       onClick={onSelect}
       aria-pressed={selected}
+      className="border rounded-lg p-4 flex items-center gap-2"
     >
-      <span>
+      <p>
         {interest.icon}
-      </span>
+      </p>
 
-      <span>
+      <p>
         {interest.name}
-      </span>
+      </p>
 
       {selected && (
-        <span>
+        <p>
           ✓
-        </span>
+        </p>
       )}
     </button>
   );

@@ -29,16 +29,6 @@ const interests = [
     name: "Pool / Snooker",
     icon: "🎱",
   },
-  {
-    id: "cycling",
-    name: "Cycling",
-    icon: "🚴",
-  },
-  {
-    id: "hiking",
-    name: "Hiking",
-    icon: "🥾",
-  },
 ];
 
 export default interests;

@@ -233,14 +233,14 @@ function StepOne({ formData, setFormData, onNext }) {
             <div className="flex gap-5 text-xs text-gray-400 mt-4 ">
               <p>
                 <DotIcon
-                  className="inline-block  text-orange-500 mr-0"
+                  className="inline-block  text-orange-500"
                   size={20}
                 />
                 Connect with players near you
               </p>
               <p>
                 <DotIcon
-                  className="inline-block text-purple-500 mr-0"
+                  className="inline-block text-blue-500"
                   size={20}
                 />
                 Climb the leaderboard
