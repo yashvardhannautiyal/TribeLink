@@ -31,10 +31,9 @@ function Register() {
   };
 
   return (
-    <div className="bg-[linear-gradient(rgba(255,255,255,.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.15)_1px,transparent_1px)]
-        bg-[size:72px_72px] py-20 min-h-screen bg-[#09090f] text-white">
+    <div className="bg-[#080a11] bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:40px_40px] text-white py-20 min-h-screen flex items-center justify-center">
       <ProgressBar currStep={currStep} />
-
+    <div>
       {currStep === 1 && (
         <StepOne
           formData={formData}
@@ -59,6 +58,7 @@ function Register() {
           onSubmit = {handleRegister}
         />
       )}
+    </div>
     </div>
   );
 }

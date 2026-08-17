@@ -70,24 +70,6 @@ export default function Login() {
               <a href="#"> SIGN IN </a>
               <ArrowRight className="inline-block  ml-1" size={12} />
             </button>
-            {/* <div className=" text-[10px] text-gray-400 mt-4 ">
-              <p>
-                {" "}
-                <DotIcon
-                  className="inline-block  text-orange-500 mr-0"
-                  size={25}
-                />
-                Connect with players near you
-              </p>
-              <p>
-                {" "}
-                <DotIcon
-                  className="inline-block text-purple-500 mr-0"
-                  size={25}
-                />
-                Climb the leaderboard
-              </p>
-            </div> */}
             <div className="text-center mt-4 text-xs text-gray-500">
               New to TribeLink?{" "}
               <a href="#" className="text-orange-500 font-bold hover:underline">
