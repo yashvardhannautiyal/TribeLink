@@ -197,9 +197,9 @@ export default function LeaderBoard() {
       </div>
       
       {/* CHAT BUTTON */}
-      <button className="fixed bottom-5 right-5 z-10 flex h-5 w-5 hover:cursor-pointer items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 shadow-[0_0_30px_rgba(239,68,68,0.3)] transition hover:scale-105 sm:bottom-7 sm:right-7 sm:h-16 sm:w-16">
+      {/* <button className="fixed bottom-5 right-5 z-10 flex h-5 w-5 hover:cursor-pointer items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 shadow-[0_0_30px_rgba(239,68,68,0.3)] transition hover:scale-105 sm:bottom-7 sm:right-7 sm:h-16 sm:w-16">
         <MessageCircle size={26} />
-      </button>
+      </button> */}
     </section>
   );
 }
