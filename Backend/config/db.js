@@ -1,4 +1,9 @@
 const mongoose = require("mongoose");
+const dns = require("dns");
+
+//force node.js to use google dns
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
 
 const connectDb = async () =>{
     try{
