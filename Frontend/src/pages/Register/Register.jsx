@@ -23,11 +23,39 @@ function Register() {
   const previousStep = () => {
     setCurrStep((prev) => prev - 1);
   };
+  
 
-  const handleRegister = () => {
-    console.log("Registration Data : ", formData);
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+  //send data to express backend
+  //async function sends formData to /api/auth/register
+  const handleRegister = async() => {
+    try{
+      const response = await fetch(
+        "http://localhost:5000/api/auth/register",
+        {
+          method: "POST",
+          headers:{
+            "Content-Type" : "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    //later : send data to your express backend
+      const data = await response.json();
+
+      if(!response.ok){
+        alert(data.message);
+        return;
+      }
+
+      console.log("Resgistration successful: ", data);
+      alert("Resgistration successful!");
+    }catch(err){
+      console.log("Registration error : ", err);
+      alert("Something went wrong. Please try again.");
+    }
+
   };
 
   return (
