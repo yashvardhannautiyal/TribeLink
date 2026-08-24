@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState} from "react";
 import {
   User,
   Lock,
@@ -9,6 +9,58 @@ import {
 } from "lucide-react";
 
 export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+
+  // login function 
+  const handleLogin = async (e) =>{
+    e.preventDefault();
+
+    try{
+      setError("");
+
+      const response = await fetch(
+        "http://localhost:5000/api/auth/login",
+        {
+          method : "POST",
+          headers:{
+            "Content-Type" : "application/json",
+          },
+          
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if(!response.ok){
+        setError(data.message);
+        return;
+      }
+
+      // save JWT token 
+      localStorage.setItem("token", data.token);
+
+      // save user information
+      localStorage.setItem(
+        "user",
+        JSON.stringify(data.user)
+      );
+
+      console.log("Login successful : ", data);
+      alert("Login successful");
+
+      //later navigate to home page - "/home"
+    }catch(err){
+      console.error("Login error : ", err);
+      setError("Login : Something went wrong. Please try again.")
+    }
+  }
   return (
     // main-component-container : bg, flex-loginbox - center
     <div className="bg-[#080a11] bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:40px_40px] text-white py-20 min-h-screen flex items-center justify-center">   
@@ -35,7 +87,7 @@ export default function Login() {
           </div>
 
           {/* form  */}
-          <form>
+          <form onSubmit={handleLogin}>
             {/* username  */}
             <div>
               <label className="font-semibold text-xs text-gray-400">
@@ -47,6 +99,8 @@ export default function Login() {
                   type="text"
                   placeholder="Your username"
                   className="w-full bg-transparent py-2 outline-none text-xs"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
             </div>
@@ -62,6 +116,8 @@ export default function Login() {
                   type="password"
                   placeholder="Your password"
                   className="w-full bg-transparent py-2 outline-none text-xs"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <Eye className="text-gray-500 mr-2 cursor-pointer" size={13} />
                 <EyeOff
@@ -71,9 +127,13 @@ export default function Login() {
               </div>
             </div>
 
+            {/* display error  */}
+            {error && (
+              <p className="text-red-500 text-sm mt-3">{error}</p>
+            )}
             {/* button  */}
             <button className=" w-full text-xs cursor-pointer bg-orange-500 hover:bg-orange-600  text-white font-bold py-2.5 px-4 rounded-md mt-4">
-              <a href="#"> SIGN IN </a>
+              SIGN IN
               <ArrowRight className="inline-block  ml-1" size={12} />
             </button>
             <div className="text-center mt-4 text-xs text-gray-500">
