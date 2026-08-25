@@ -7,6 +7,8 @@ import {
   ArrowRight,
   DotIcon,
   Zap,
+  MapPinned,
+  CircleUserRound
 } from "lucide-react";
 
 function StepOne({ formData, setFormData, onNext }) {
@@ -165,6 +167,7 @@ function StepOne({ formData, setFormData, onNext }) {
                 LOCATION
               </label>
               <div className="mt-1 flex items-center bg-black border border-gray-700 rounded-xl px-2 ">
+                <MapPinned className="text-gray-500 mr-2" size={14} />
                 <input
                   type="text"
                   name="location"
@@ -213,13 +216,18 @@ function StepOne({ formData, setFormData, onNext }) {
                 BIO
               </label>
               <div className="mt-1 flex items-center bg-black border border-gray-700 rounded-xl px-2 ">
-                <textarea
+                <CircleUserRound
+                  className="text-gray-500 mr-2 cursor-pointer"
+                  size={14}
+                />
+                <input
+                type="text"
                   name="bio"
                   id="bio"
                   placeholder="Tell us something about yourself"
                   value={formData.bio}
                   onChange={handleChange}
-                  className="w-full bg-transparent py-2 outline-none text-xs"
+                  className="w-full bg-transparent py-2 outline-none   text-xs"
                 />
               </div>
             </div>

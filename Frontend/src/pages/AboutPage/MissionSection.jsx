@@ -6,8 +6,8 @@ import { useEffect } from "react";
 
 const stats = [
   {
-    number: "0+",
-    title: "ACTIVE PLAYERS",
+    number: "100%",
+    title: "FREE TO PLAY",
     color: "text-red-500",
   },
   {
@@ -17,8 +17,8 @@ const stats = [
     border: "border-blue-500",
   },
   {
-    number: "0+",
-    title: "MATCHES PLAYED",
+    number: "24/7",
+    title: "MATCHMAKING",
     color: "text-purple-500",
   },
   {

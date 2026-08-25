@@ -7,6 +7,7 @@ import {
   ArrowRight,
   Zap,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -136,12 +137,13 @@ export default function Login() {
               SIGN IN
               <ArrowRight className="inline-block  ml-1" size={12} />
             </button>
-            <div className="text-center mt-4 text-xs text-gray-500">
-              New to TribeLink?{" "}
-              <a href="#" className="text-orange-500 font-bold hover:underline">
-                Create an Account
-              </a>
-            </div>
+             <p className="mt-2 text-center text-sm text-gray-400">
+          Don't have an account?{" "}
+               <Link to="/register"
+              className="font-bold text-orange-500 hover:underline">
+            Create Account
+          </Link>              
+            </p>
           </form>
         </div>
     </div>

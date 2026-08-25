@@ -43,7 +43,7 @@ function StepTwo({ formData, setFormData, onNext, onBack }) {
               Select your Tribe
             </h1>
 
-            <p className="text-gray-500 font-medium">What are you into?</p>
+            <p className="text-white/50 font-medium">What are you into?</p>
           </div>
           <div>
             <p className="text-gray-500 text-sm pb-2">Select your interests and connect with people around.</p>
