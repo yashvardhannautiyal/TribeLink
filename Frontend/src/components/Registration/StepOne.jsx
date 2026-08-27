@@ -94,8 +94,8 @@ function StepOne({ formData, setFormData, onNext }) {
 
   return (
     // main-component-container
-    <div className="flex justify-center pt-3">
-      <div className="w-md px-8 py-3 rounded-2xl bg-[#101829bd] border border-t-orange-500 border-l-orange-400 border-b-blue-500 border-r-blue-400">
+    <div className="w-full flex justify-center px-3 sm:px-4 py-2 ">
+      <div className="w-full max-w-sm sm:max-w-md p-4 sm:p-6 md:p-7 py-3 rounded-2xl bg-[#101829bd] border border-t-orange-500 border-l-orange-400 border-b-blue-500 border-r-blue-400">
         {/* logo  */}
         <div className="flex items-center gap-1 justify-center mb-0 text-xl ">
           <div className="bg-orange-500 px-2 py-2 rounded-lg">

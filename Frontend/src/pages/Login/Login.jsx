@@ -69,6 +69,11 @@ export default function Login() {
         {/* login-container : box, contents  */}
         <div className="w-sm px-10 py-10 rounded-2xl bg-[#101829bd] border border-t-orange-500 border-l-orange-400 border-b-blue-500 border-r-blue-400">
           {/* logo  */}
+                         
+    {/* <div className="font-bold text-xl text-center mb-2 rounded-lg border-black border-2  bg-amber-800">
+      LOGIN
+    </div>
+   */}
           <div className="flex items-center gap-1 justify-center mb-0 text-xl ">
             <div className="bg-orange-500 px-2 py-2 rounded-lg">
               <Zap className="text-white fill-amber-50 w-2 h-2" />
@@ -77,6 +82,7 @@ export default function Login() {
               TRIBE<span className="text-orange-500">LINK</span>
             </h1>
           </div>
+   
           {/* logo text  */}
           <div className="text-center py-3">
           <h1 className="text-lg font-bold text-white">
