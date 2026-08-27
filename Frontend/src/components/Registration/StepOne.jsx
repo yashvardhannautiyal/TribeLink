@@ -194,7 +194,7 @@ function StepOne({ formData, setFormData, onNext }) {
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="*****"
+                  placeholder="************"
                   value={formData.password}
                   onChange={handleChange}
                   className="w-full bg-transparent py-2 outline-none text-xs"
