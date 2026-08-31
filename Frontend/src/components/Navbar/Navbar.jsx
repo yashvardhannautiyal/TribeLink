@@ -33,7 +33,7 @@ const Navbar = () => {
           <Link to="/explore" className="hover:text-white transition">
             EXPLORE
           </Link>
-          <Link to="#" className="hover:text-white transition">
+          <Link to="/connect" className="hover:text-white transition">
             CONNECT
           </Link>
         </div>
@@ -106,6 +106,13 @@ const Navbar = () => {
             className="hover:text-white transition"
           >
             EXPLORE
+          </Link>
+          <Link
+            to="/connect"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-white transition"
+          >
+            CONNECT
           </Link>
         
           <div className="flex flex-col gap-3 pt-2 w-3xs">
