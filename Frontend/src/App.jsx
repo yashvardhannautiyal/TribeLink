@@ -8,7 +8,6 @@ import Explore from "./pages/ExplorePage/Explore"
 import Register from "./pages/Register/Register"
 import MainLayout from "./components/MainLayout/MainLayout";
 import About from './pages/AboutPage/About';
-import Connect from './pages/ConnectPage/Connect';
 // import Navbar from './components/Navbar/Navbar';
 // import Footer from './components/Footer/Footer';
 
@@ -21,7 +20,6 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='/about' element={<About />} />
         <Route path='/explore' element={<Explore />} />
-        <Route path='/connect' element={<Connect />} />
         </Route>
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />

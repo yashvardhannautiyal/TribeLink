@@ -107,14 +107,7 @@ const Navbar = () => {
           >
             EXPLORE
           </Link>
-          <Link
-            to="/connect"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-white transition"
-          >
-            CONNECT
-          </Link>
-        
+          
           <div className="flex flex-col gap-3 pt-2 w-3xs">
             <button className="px-5 py-1 rounded-md border border-gray-700 text-gray-400 text-sm font-medium hover:text-white hover:border-orange-400 transition">
               <Link to="/login">SIGN IN</Link>
