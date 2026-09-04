@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Connect from "../../components/Connect/Connect";
 import {
   Search,
   Gamepad2,
@@ -52,35 +53,6 @@ const games = [
 ];
 
 export default function Explore() {
-  //user + loading state
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  // fetch user data to display
-  const fetchUsers = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/api/users");
-      const data = await response.json();
-
-      if (data.success) {
-        setUsers(data.users);
-      }
-    } catch (err) {
-      console.error("Error fetching users : ", err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  //runs once the component is mounted ( initial render )
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  //loading
-  if (loading) {
-    return <div>Loading users....</div>;
-  }
 
   return (
     <div>
@@ -142,33 +114,7 @@ export default function Explore() {
         </div>
 
         {/* CONNECT USER  */}
-        <div>
-          {/* heading  */}
-          <div>
-            <h2>Connect with people</h2>
-          </div>
-
-          {/* user container  */}
-          <div>
-            {users.map((user) => (
-              <div key={user._id}>
-                {/* details  */}
-                <h2>{user.username}</h2>
-
-                <p>{user.bio}</p>
-
-                {/* interests  */}
-                <div>
-                  {user.interests?.map((interest) => (
-                    <p key={interest}>{interest}</p>
-                  ))}
-                </div>
-
-                <button>Connect</button>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Connect />
 
         {/* DIAGONAL DIVIDER */}
 
