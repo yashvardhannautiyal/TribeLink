@@ -122,6 +122,7 @@ export default function Explore() {
       <div className="relative bg-[#121219] px-4 pb-20 pt-5 sm:px-6 sm:pb-24 sm:pt-7 md:pb-28 md:pt-8 lg:px-8">
         <div>
         <h1 className="text-4xl text-center mb-10 font-black leading-[1.05] tracking-tight md:text-6xl lg:text-7xl bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">GAMES</h1>
+        <h4 className="text-center lg:text-lg font-bold -mt-10 mb-10 text-sm text-white/40">WE SUPPORT</h4>
       </div>
 
         {/* GAME CARDS CONTAINER */}
@@ -206,7 +207,7 @@ export default function Explore() {
 
       <button type="button"
         aria-label="Open chat"
-        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 shadow-[0_0_30px_rgba(239,68,68,0.3)] transition-all duration-300 hover:scale-105 sm:bottom-7 sm:right-7 sm:h-16 sm:w-16">
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 shadow-[0_0_30px_rgba(239,68,68,0.3)] transition-all duration-300 hover:scale-105 sm:bottom-7 sm:right-7 sm:h-16 sm:w-16 hover:cursor-pointer">
         <MessageCircle size={26} strokeWidth={2} />
       </button>
     </section>

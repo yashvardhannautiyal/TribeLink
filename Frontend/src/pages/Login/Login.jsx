@@ -64,16 +64,13 @@ export default function Login() {
   }
   return (
     // main-component-container : bg, flex-loginbox - center
-    <div className="bg-[#080a11] bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:40px_40px] text-white py-20 min-h-screen flex items-center justify-center">   
+    <div className="bg-[#080a11] bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:40px_40px] text-white py-20 min-h-screen flex items-center justify-center p-4 lg:p-0">   
 
         {/* login-container : box, contents  */}
         <div className="w-sm px-10 py-10 rounded-2xl bg-[#101829bd] border border-t-orange-500 border-l-orange-400 border-b-blue-500 border-r-blue-400">
           {/* logo  */}
                          
-    {/* <div className="font-bold text-xl text-center mb-2 rounded-lg border-black border-2  bg-amber-800">
-      LOGIN
-    </div>
-   */}
+  
           <div className="flex items-center gap-1 justify-center mb-0 text-xl ">
             <div className="bg-orange-500 px-2 py-2 rounded-lg">
               <Zap className="text-white fill-amber-50 w-2 h-2" />
@@ -82,13 +79,14 @@ export default function Login() {
               TRIBE<span className="text-orange-500">LINK</span>
             </h1>
           </div>
+           
    
           {/* logo text  */}
           <div className="text-center py-3">
-          <h1 className="text-lg font-bold text-white">
+          <h1 className="text-lg font-extrabold lg:text-2xl text-white">
             Welcome Back
           </h1>
-          <p className="font-medium text-sm  text-gray-500 ">
+          <p className="font-medium text-sm   text-gray-500 ">
             Login with your tribe and dominate together
           </p>
           </div>
@@ -120,17 +118,32 @@ export default function Login() {
               <div className="mt-1 flex items-center bg-black border border-gray-700 rounded-xl px-2 ">
                 <Lock className="text-gray-500 mr-2" size={13} />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Your password"
                   className="w-full bg-transparent py-2 outline-none text-xs"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <Eye className="text-gray-500 mr-2 cursor-pointer" size={13} />
-                <EyeOff
-                  className="text-gray-500 mr-2 cursor-pointer"
-                  size={13}
-                />
+                <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="text-gray-500 mr-2 bg-transparent border-0 p-0 flex items-center justify-center hover:text-gray-300 focus:outline-none cursor-pointer"
+                >
+                  {showPassword ? (
+                    <EyeOff size={13} />
+                  ) : (
+                    <Eye size={13} />
+                  )}
+                </button>
+                {/* {showPassword ? (
+                //     <EyeOff
+                //   className="text-gray-500 mr-2 cursor-pointer"
+                //   size={13}
+                //   onClick={() => setShowPassword((prev) => !prev)}
+                // />
+                // ) : (
+                //    <Eye className="text-gray-500 mr-2 cursor-pointer" size={13} onClick={() => setShowPassword((prev) => !prev)} />
+                )}  */}
               </div>
             </div>
 
