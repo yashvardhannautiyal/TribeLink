@@ -131,6 +131,7 @@ export default function Explore() {
             <h1 className="text-4xl text-center mb-10 font-black leading-[1.05] tracking-tight md:text-6xl lg:text-7xl bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
               GAMES
             </h1>
+            <h4 className="text-center lg:text-lg font-bold -mt-10 mb-10 text-sm text-white/30">WE SUPPORT</h4>
           </div>
 
           {/* GAME CARDS CONTAINER */}

@@ -35,7 +35,7 @@ function Connect() {
       
       {/* Heading */}
       <div className="mb-8 text-center">
-        <h2 className="text-3xl font-bold text-white md:text-4xl">
+        <h2 className="text-3xl font-extrabold text-white md:text-4xl ">
           Connect with People
         </h2>
 
