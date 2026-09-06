@@ -1,14 +1,14 @@
 import React from 'react'
 import '../index.css';
-import Login from './pages/Login/Login';
-import HeroSection from './pages/HomePage/HeroSection';
 import {Route, Routes, Outlet} from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage"
-import Explore from "./pages/ExplorePage/Explore"
-import Register from "./pages/Register/Register"
-import MainLayout from "./components/MainLayout/MainLayout";
-import About from './pages/AboutPage/About';
-import Connect from './pages/ConnectPage/Connect';
+import HomePage from "./Home/pages/HomePage/HomePage"
+import Explore from "./Home/pages/ExplorePage/Explore"
+import Register from "./Home/pages/Register/Register"
+// import Register from "./Home/pages/Register/Register"
+import Login from "./Home/pages/Login/Login"
+// import MainLayout from "./components/MainLayout/MainLayout";
+import MainLayout from "./Home/components/MainLayout/MainLayout";
+import About from './Home/pages/AboutPage/About';
 // import Navbar from './components/Navbar/Navbar';
 // import Footer from './components/Footer/Footer';
 
@@ -21,7 +21,6 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='/about' element={<About />} />
         <Route path='/explore' element={<Explore />} />
-        <Route path='/connect' element={<Connect />} />
         </Route>
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
