@@ -3,8 +3,12 @@ import StepOne from "../../components/Registration/StepOne";
 import StepTwo from "../../components/Registration/StepTwo";
 import StepThree from "../../components/Registration/StepThree";
 import ProgressBar from "../../components/Registration/ProgressBar";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+
+  const navigate = useNavigate();
+
   const [currStep, setCurrStep] = useState(1);
 
   const [formData, setFormData] = useState({
@@ -49,8 +53,13 @@ function Register() {
         return;
       }
 
+
       console.log("Resgistration successful: ", data);
       alert("Resgistration successful!");
+
+      
+      //once the registration is successfull navigate to register
+      navigate("/login");
     }catch(err){
       console.log("Registration error : ", err);
       alert("Something went wrong. Please try again.");

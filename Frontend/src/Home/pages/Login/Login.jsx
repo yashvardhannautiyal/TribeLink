@@ -8,8 +8,12 @@ import {
   Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -55,6 +59,9 @@ export default function Login() {
 
       console.log("Login successful : ", data);
       alert("Login successful");
+
+      
+      navigate("/explore");
 
       //later navigate to home page - "/home"
     }catch(err){
