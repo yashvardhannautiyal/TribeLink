@@ -2,7 +2,7 @@ import React from 'react'
 import '../index.css';
 import {Route, Routes, Outlet} from "react-router-dom";
 import HomePage from "./Home/pages/HomePage/HomePage"
-import Explore from "./Home/pages/ExplorePage/Explore"
+import Explore from "./Dashboard/DashboardPages/ExplorePage/Explore"
 import Register from "./Home/pages/Register/Register"
 // import Register from "./Home/pages/Register/Register"
 import Login from "./Home/pages/Login/Login"
@@ -20,8 +20,8 @@ function App() {
         <Route path = "/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path='/about' element={<About />} />
-        <Route path='/explore' element={<Explore />} />
         </Route>
+        <Route path='/dashboard/explore' element={<Explore />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
       </Routes>
