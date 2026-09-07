@@ -1,5 +1,6 @@
 import React from "react";
-import Connect from "../../components/Connect/Connect";
+import Connect from "../../DashboardComps/Connect/Connect";
+import DashboardNav from "../../DashboardComps/DashboardNav/DashboardNav";
 import {
   Search,
   Gamepad2,
