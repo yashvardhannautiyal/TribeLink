@@ -157,9 +157,18 @@ const getCurrentUser = async(req, res) =>{
                 message : "User not found",
             });
         }
+
+        res.status(200).json({
+            message : "User authenticated",
+            user,
+        })
     }catch(err){
-        
+        console.error(err);
+
+        res.status(500).json({
+            message : "Server error",
+        });
     }
 }
-module.exports = {registerUser, loginUser};
+module.exports = {registerUser, loginUser, getCurrentUser};
 
