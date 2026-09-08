@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import interests from "../../data/interests";
 import InterestCard from "./InterestCard";
+import toast, { Toaster } from "react-hot-toast";
 
 function StepTwo({ formData, setFormData, onNext, onBack }) {
   const [error, setError] = useState("");
@@ -28,15 +29,22 @@ function StepTwo({ formData, setFormData, onNext, onBack }) {
   // next page function
   const handleNext = () => {
     if (formData.interests.length < 1) {
-      setError("Please select atleast 1 interests.");
+      // setError("Please select atleast 1 interests*");
+      toast.error("Please select at least 1 interest*", {
+        style: {
+          background: "#101829",
+          color: "#fff",
+          border: "1px solid #f97316",
+        },
+      });
       return;
     }
-
     onNext();
   };
 
   return (
       <div className="flex justify-center pt-3 ">
+      <Toaster position="top-center" reverseOrder={false} />
         <div className="w-md px-8 py-3 rounded-2xl bg-[#101829bd] border border-t-orange-500 border-l-orange-400 border-b-blue-500 border-r-blue-400">
           <div className="text-center pb-2">
             <h1 className="text-lg lg:text-3xl font-extrabold text-orange-500">
