@@ -9,7 +9,7 @@ function Register() {
 
   const navigate = useNavigate();
 
-  const [currStep, setCurrStep] = useState(2);
+  const [currStep, setCurrStep] = useState(3);
 
   const [formData, setFormData] = useState({
     username: "",

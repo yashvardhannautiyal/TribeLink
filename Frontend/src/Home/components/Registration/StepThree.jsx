@@ -10,7 +10,7 @@ function StepThree({ formData, onBack, onSubmit }) {
     <div className="flex justify-center pt-3">
       <div className="w-md px-8 py-3 rounded-2xl bg-[#101829bd] border border-t-orange-500 border-l-orange-400 border-b-blue-500 border-r-blue-400">
         <div className="text-center pb-2">
-          <h1 className="text-2xl font-bold text-orange-500">
+          <h1 className="text-2xl font-extrabold text-orange-500">
             Review your profile
           </h1>
         </div>

@@ -137,9 +137,9 @@ export default function Login() {
                 className="text-gray-500 mr-2 bg-transparent border-0 p-0 flex items-center justify-center hover:text-gray-300 focus:outline-none cursor-pointer"
                 >
                   {showPassword ? (
-                    <EyeOff size={13} />
-                  ) : (
                     <Eye size={13} />
+                  ) : (
+                    <EyeOff size={13} />
                   )}
                 </button>
                 {/* {showPassword ? (

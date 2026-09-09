@@ -12,6 +12,9 @@ import {
 } from "lucide-react";
 
 function StepOne({ formData, setFormData, onNext }) {
+  
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({
     username: "",
     email: "",
@@ -186,24 +189,34 @@ function StepOne({ formData, setFormData, onNext }) {
                 htmlFor="password"
                 className="font-semibold text-gray-400 text-xs"
               >
-                PASSWORD
+                CREATE PASSWORD
               </label>
               <div className="mt-1 flex items-center bg-black border border-gray-700 rounded-xl px-2 ">
                 <Lock className="text-gray-500 mr-2" size={13} />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   id="password"
                   placeholder="************"
                   value={formData.password}
-                  onChange={handleChange}
+                  onChange ={ (e) => {
+                    handleChange(e);
+                    setPassword(e.target.value);
+                  }}
                   className="w-full bg-transparent py-2 outline-none text-xs"
                 />
-                <Eye className="text-gray-500 mr-2 cursor-pointer" size={13} />
-                <EyeOff
-                  className="text-gray-500 mr-2 cursor-pointer"
-                  size={13}
-                />
+               {/* eye button to show/hide password */}
+                 <button
+                                type="button"
+                                onClick={() => setShowPassword((prev) => !prev)}
+                                className="text-gray-500 mr-2 bg-transparent border-0 p-0 flex items-center justify-center hover:text-gray-300 focus:outline-none cursor-pointer"
+                                >
+                                  {showPassword ? (
+                                    <Eye size={13} />
+                                  ) : (
+                                    <EyeOff size={13} />
+                                  )}
+                                </button>
               </div>
             </div>
 
