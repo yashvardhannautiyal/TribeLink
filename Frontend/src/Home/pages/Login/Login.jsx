@@ -61,7 +61,7 @@ export default function Login() {
       alert("Login successful");
 
       
-      navigate("/explore");
+      navigate("/dashboard/explore");
 
       //later navigate to home page - "/home"
     }catch(err){
