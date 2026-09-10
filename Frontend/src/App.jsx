@@ -4,13 +4,11 @@ import {Route, Routes, Outlet} from "react-router-dom";
 import HomePage from "./Home/pages/HomePage/HomePage"
 import Explore from "./Dashboard/DashboardPages/ExplorePage/Explore"
 import Register from "./Home/pages/Register/Register"
-// import Register from "./Home/pages/Register/Register"
 import Login from "./Home/pages/Login/Login"
-// import MainLayout from "./components/MainLayout/MainLayout";
 import MainLayout from "./Home/components/MainLayout/MainLayout";
 import About from './Home/pages/AboutPage/About';
-// import Navbar from './components/Navbar/Navbar';
-// import Footer from './components/Footer/Footer';
+import ProtectedRoute from './Home/components/ProtectedRoute/ProtectedRoute';
+
 
 function App() {
   return (
@@ -23,7 +21,10 @@ function App() {
         </Route>
         <Route path='/dashboard/explore' element={<Explore />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={
+          <ProtectedRoute>
+          <Login />
+          </ProtectedRoute>} />
       </Routes>
     </div>
 

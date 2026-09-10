@@ -57,6 +57,7 @@ export default function Explore() {
 
   return (
     <div>
+      <DashboardNav />
       <section className="relative min-h-screen w-full overflow-hidden bg-[#09090e] text-white">
         {/* BACKGROUND */}
 
