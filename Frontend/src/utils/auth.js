@@ -36,6 +36,7 @@ export const logout = () =>{
 };
 
 //verify token
+// checks from the database if the token is valid or not
 export const verifyToken = async () =>{
     const token = getToken();
 

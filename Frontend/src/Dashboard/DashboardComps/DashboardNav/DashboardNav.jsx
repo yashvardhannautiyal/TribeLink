@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { Zap, Menu, X} from "lucide-react";
+import { Zap, Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../../utils/auth";
 
 const DashboardNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // logout functionality 
+  // logout functionality
   const navigate = useNavigate();
 
   const handleLogout = () => {
-      logout(); //auth.js util
-      navigate("/login");
-  }
+    logout(); //auth.js util
+    navigate("/login");
+  };
   return (
     <nav className="bg-gray-900 px-5 md:px-10 py-2 relative">
       {/* Desktop Navbar */}
@@ -28,19 +28,16 @@ const DashboardNav = () => {
           </h1>
         </div>
 
-      
-
         {/* LOGOUT button  */}
         <div className="flex items-center px-0 gap-2">
-          <button 
-          onClick={handleLogout}
-          className="px-3 py-1 rounded-md border border-gray-700 text-gray-400 text-xs md:text-sm font-medium hover:text-white hover:border-orange-400 hover:cursor-pointer transition">
+          <button
+            onClick={handleLogout}
+            className="px-3 py-1 rounded-md border border-gray-700 text-gray-400 text-xs md:text-sm font-medium hover:text-white hover:border-orange-400 hover:cursor-pointer transition"
+          >
             Logout
           </button>
         </div>
       </div>
-
-
 
       {/* Mobile Navbar */}
       <div className="flex md:hidden items-center justify-between relative">
@@ -74,12 +71,14 @@ const DashboardNav = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden rounded-xl p-5 flex flex-col items-center gap-4 text-gray-400 text-xs font-medium">
-         
           <div className="flex flex-col gap-3 pt-2 w-3xs">
-            <button className="px-5 py-1 rounded-md border border-gray-700 text-gray-400 text-sm font-medium hover:text-white hover:border-orange-400 transition">
-              <Link to="/">Sign out</Link>
+            <button
+              onClick={handleLogout}
+              className="px-5 py-1 rounded-md border border-gray-700 text-gray-400 text-sm font-medium hover:text-white hover:border-orange-400 transition"
+            >
+              Logout
             </button>
-         </div>
+          </div>
         </div>
       )}
     </nav>
