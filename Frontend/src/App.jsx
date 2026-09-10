@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../index.css";
-import { Route, Routes, Outlet } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./Home/pages/HomePage/HomePage";
 import Explore from "./Dashboard/DashboardPages/ExplorePage/Explore";
 import Register from "./Home/pages/Register/Register";
@@ -49,7 +49,7 @@ function App() {
         <Route
           path="/dashboard/explore"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute user = {user}>
               <Explore />
             </ProtectedRoute>
           }
