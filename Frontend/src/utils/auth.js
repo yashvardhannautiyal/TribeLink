@@ -28,7 +28,8 @@ export const getStoredUser = () =>{
     }
 }
 
-//logout
+// logout
+// remove users saved data from local storage
 export const logout = () =>{
     localStorage.removeItem("token");
     localStorage.removeItem("user");
