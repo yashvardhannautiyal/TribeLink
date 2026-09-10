@@ -246,7 +246,7 @@ function StepOne({ formData, setFormData, onNext }) {
             </div>
 
             {/* button  */}
-            <button className="w-full text-xs cursor-pointer bg-orange-500 hover:bg-orange-600  text-white font-bold py-2.5 px-4 rounded-md mt-4">
+            <button className="w-full text-xs  rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-blue-900/30 active:scale-[0.98] transition duration-150 cursor-pointer py-2.5 px-4 mt-4">
               Continue 
               <ArrowRight className="inline-block  ml-1" size={12} />
             </button>

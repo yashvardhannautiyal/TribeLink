@@ -10,7 +10,7 @@ function ProgressBar({ currStep = 1 }) {
 
   return (
     <div className="w-full flex justify-center px-2 mb-4">
-    <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 md:gap-3 p-1.5 sm:p-2 bg-[#141d26]/80 border border-slate-700/60 rounded-xl backdrop-blur-md shadow-xl max-w-full">
+    <div className="flex items-center justify-center mt-2 gap-1.5 sm:gap-2.5 md:gap-3 p-1.5 sm:p-2 bg-[#141d26]/80 border border-slate-700/60 rounded-xl backdrop-blur-md shadow-xl max-w-full">
       {steps.map((step, index) => {
         const isActive = currStep === step.number;
         const isCompleted = currStep > step.number;

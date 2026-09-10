@@ -93,6 +93,7 @@ function Register() {
       {currStep === 3 && (
         <StepThree
           formData={formData}
+          setFormData={setFormData}
           onBack={previousStep}
           onSubmit = {handleRegister}
         />

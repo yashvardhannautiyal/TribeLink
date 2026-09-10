@@ -70,11 +70,15 @@ function StepTwo({ formData, setFormData, onNext, onBack }) {
           {error && <p>{error}</p>}
 
           <div className="pt-3 flex gap-3 mb-4">
-            <button type="button" onClick={onBack} className="w-full text-xs cursor-pointer bg-orange-500 hover:bg-orange-600  text-white font-bold py-2.5 px-4 rounded-md mt-4">
-              ← Back
-            </button>
+            <button
+            type="button"
+            onClick={onBack}
+            className="w-1/3 py-2.5 px-4 rounded-xl border border-slate-600 hover:border-slate-400 hover:bg-slate-800/40 text-slate-300 text-xs font-semibold transition duration-150 cursor-pointer"
+          >
+            ← Back
+          </button>
 
-            <button type="button" onClick={handleNext} className="w-full text-xs cursor-pointer bg-blue-500 hover:bg-blue-600  text-white font-bold py-2.5 px-4 rounded-md mt-4">
+            <button type="button" onClick={handleNext} className="w-2/3 py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-blue-900/30 active:scale-[0.98] transition duration-150 cursor-pointer">
               Continue →
             </button>
           </div>
