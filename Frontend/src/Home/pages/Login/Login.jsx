@@ -83,7 +83,8 @@ export default function Login() {
               <Zap className="text-white fill-amber-50 w-2 h-2" />
             </div>
             <h1 className="text-2xl font-bold ">
-              TRIBE<span className="text-orange-500">LINK</span>
+              <Link to={"/"}>
+              TRIBE<span className="text-orange-500">LINK</span></Link>
             </h1>
           </div>
            

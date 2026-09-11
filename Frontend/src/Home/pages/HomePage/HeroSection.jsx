@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight, Star ,Zap ,ChevronRight, MessageCircle } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const players = [
   {
@@ -75,14 +76,19 @@ function HeroSection() {
               ranks — PS5, Football, Pool, Bowling and more.
             </p>
              <div className="mt-5 mb-5 flex flex-col sm:flex-row gap-5">
+              <Link to={"/register"}>
                 <button className="border bg-orange-600/20 border-orange-500 hover:bg-orange-600 transition px-8 py-4 rounded-xl font-bold flex hover:cursor-pointer items-center justify-center gap-2">
                 JOIN NOW
                 <ArrowRight size={20} />
               </button>
+              </Link>
+
+              <Link to={"/dashboard/explore"}>
                <button className="border border-blue-600 text-blue-500 hover:bg-blue-600 hover:text-white transition px-8 py-4 rounded-xl hover:cursor-pointer font-bold flex items-center justify-center gap-2">
                 Explore
                 <ChevronRight size={20} />
               </button>
+              </Link>
              </div>
                </div>
                {/* right Section */}

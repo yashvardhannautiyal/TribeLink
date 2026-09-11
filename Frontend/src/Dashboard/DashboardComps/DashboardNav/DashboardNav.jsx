@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Zap, Menu, X } from "lucide-react";
+import { Zap, Menu, X, LinkIcon } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../../utils/auth";
 
@@ -22,10 +22,11 @@ const DashboardNav = () => {
           <div className="bg-orange-500 p-1 rounded-lg">
             <Zap className="text-white fill-amber-50 w-3 h-3 md:w-4 md:h-4" />
           </div>
-
+          <Link to={"/"}>
           <h1 className="text-white font-bold text-xl md:text-3xl">
             TRIBE<span className="text-orange-500">LINK</span>
           </h1>
+          </Link>
         </div>
 
         {/* LOGOUT button  */}
@@ -46,10 +47,11 @@ const DashboardNav = () => {
           <div className="bg-orange-500 p-1 rounded-lg">
             <Zap className="text-white fill-amber-50 w-3 h-3" />
           </div>
-
+          <Link to={"/"}>
           <h1 className="text-white font-bold text-xl">
             TRIBE<span className="text-orange-500">LINK</span>
           </h1>
+          </Link>
         </div>
 
         {/* Right Side Icons */}

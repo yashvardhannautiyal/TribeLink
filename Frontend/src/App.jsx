@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import HomePage from "./Home/pages/HomePage/HomePage";
 import Explore from "./Dashboard/DashboardPages/ExplorePage/Explore";
 import Register from "./Home/pages/Register/Register";
@@ -15,6 +15,9 @@ function App() {
   const [user, setUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
 
+  const navigate = useNavigate();
+
+
   useEffect(() => {
     // function to check authentication 
     const checkAuthentication = async () => {
@@ -22,6 +25,10 @@ function App() {
 
       if (authenticatedUser) {
         setUser(authenticatedUser);
+
+        if(window.location.pathname === "/"){
+          navigate("/dashboard/explore", {replace: true});
+        }
       }
 
       setAuthLoading(false);
@@ -30,7 +37,7 @@ function App() {
 
     //function call
     checkAuthentication();
-  }, []); //renders once after the app is started
+  }, [navigate]); //renders once after the app is started
 
   if (authLoading) {
     return (
@@ -41,11 +48,14 @@ function App() {
   }
   return (
     <div>
+      {/* public pages  */}
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/about" element={<About />} />
         </Route>
+
+        {/* protected pages  */}
         <Route
           path="/dashboard/explore"
           element={
@@ -54,6 +64,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        {/* authentication pages  */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
