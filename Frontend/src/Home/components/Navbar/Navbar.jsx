@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Zap, Menu, X} from "lucide-react";
+import { Zap, Menu, X, Shield} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -33,6 +33,8 @@ const Navbar = () => {
 
         {/* buttons  */}
         <div className="flex items-center px-0 gap-2">
+
+          <Link to={"/admin"}><Shield className="text-gray-400 mr-2 w-5 h-5"/></Link>
           <Link to="/login">
           <button className="px-3 py-1 rounded-md border border-gray-700 text-gray-400 text-xs md:text-sm font-medium hover:text-white hover:border-orange-400 hover:cursor-pointer transition">
             LOGIN
@@ -96,7 +98,7 @@ const Navbar = () => {
           >
             ABOUT
           </Link>
-
+          <Link to={"/admin"}><Shield className="text-gray-400 mr-2 w-5 h-5"/></Link>
           
           
           <div className="flex flex-col gap-3 pt-2 w-3xs">
