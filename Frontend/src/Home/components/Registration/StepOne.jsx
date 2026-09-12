@@ -8,7 +8,8 @@ import {
   DotIcon,
   Zap,
   MapPinned,
-  CircleUserRound
+  CircleUserRound,
+  Mail,
 } from "lucide-react";
 
 function StepOne({ formData, setFormData, onNext }) {
@@ -149,7 +150,7 @@ function StepOne({ formData, setFormData, onNext }) {
                 EMAIL
               </label>
               <div className="mt-1 flex items-center bg-black border border-gray-700 rounded-xl px-2 ">
-                <Lock className="text-gray-500 mr-2" size={13} />
+                <Mail className="text-gray-500 mr-2" size={13} />
                 <input
                   type="email"
                   name="email"

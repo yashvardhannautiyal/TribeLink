@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function UserLogComp() {
   return (
@@ -74,10 +75,10 @@ export default function UserLogComp() {
 
                 {/* JOIN NOW */}
 
-                <button className=" group flex min-h-[58px] w-full items-center justify-center gap-3 rounded-xl bg-orange-500 px-6 py-4 text-xs font-bold tracking-wider text-white transition-all duration-300 hover:bg-orange-600 hover:cursor-pointer hover:shadow-[0_0_30px_rgba(249,115,22,0.25)] sm:min-h-[60px] sm:text-sm">
+                <Link to="/register" className=" group flex min-h-[58px] w-full items-center justify-center gap-3 rounded-xl bg-orange-500 px-6 py-4 text-xs font-bold tracking-wider text-white transition-all duration-300 hover:bg-orange-600 hover:cursor-pointer hover:shadow-[0_0_30px_rgba(249,115,22,0.25)] sm:min-h-[60px] sm:text-sm">
                   JOIN NOW — IT'S FREE
                   <ArrowRight size={19} className=" transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+                </Link>
 
                 {/* LEARN MORE */}
 
