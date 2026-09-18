@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 
-function Connect() {
+function Connect({searchTerm}) {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -35,6 +35,12 @@ function Connect() {
     fetchUsers();
   }, []);
 
+
+  //filtered user
+  const filteredUsers = users.filter((e) =>
+    e.username.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <section className="relative mx-auto w-full max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
       {/* Heading */}
@@ -64,9 +70,9 @@ function Connect() {
       )}
 
       {/* Users */}
-      {!loading && !error && users.length > 0 && (
+      {!loading && !error && filteredUsers.length > 0 && (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {users.map((user) => (
+          {filteredUsers.map((user) => (
             <UserCard key={user._id} user={user} />
           ))}
         </div>

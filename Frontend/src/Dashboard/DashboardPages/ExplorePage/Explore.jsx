@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import Connect from "../../DashboardComps/Connect/Connect";
 import DashboardNav from "../../DashboardComps/DashboardNav/DashboardNav";
 import {
@@ -54,6 +54,9 @@ const games = [
 ];
 
 export default function Explore() {
+  
+  // search + filter states 
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <div>
@@ -109,14 +112,16 @@ export default function Explore() {
 
             <input
               type="text"
-              placeholder="Search by name or city..."
+              placeholder="Search by name..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full bg-transparent text-sm text-white outline-none placeholder:text-[#72728b] sm:text-base"
             />
           </div>
         </div>
 
         {/* CONNECT USER  */}
-        <Connect />
+        <Connect searchTerm = {searchTerm}/>
 
         {/* DIAGONAL DIVIDER */}
 
