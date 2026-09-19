@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import Connect from "../../DashboardComps/Connect/Connect";
 import DashboardNav from "../../DashboardComps/DashboardNav/DashboardNav";
 import {
@@ -54,9 +54,9 @@ const games = [
 ];
 
 export default function Explore() {
-  
-  // search + filter states 
+  // search + filter states
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedGame, setSelectedGame] = useState("");
 
   return (
     <div>
@@ -101,27 +101,70 @@ export default function Explore() {
             players who match your level.
           </p>
 
-          {/* SEARCH BAR */}
+          {/* filter + search  */}
+          <div className="flex gap-8">
+            {/* SEARCH BAR */}
+            <div className="mt-8 w-lg flex items-center rounded-2xl border border-white/10 bg-[#121219] px-5 py-4 transition-all duration-300 focus-within:border-blue-500/40 focus-within:shadow-[0_0_30px_rgba(37,99,235,0.08)] sm:mt-10 sm:px-6 sm:py-5">
+              <Search
+                size={21}
+                strokeWidth={2}
+                className=" mr-4 shrink-0 text-[#72728b]"
+              />
 
-          <div className="mt-8 flex w-full max-w-[615px] items-center rounded-2xl border border-white/10 bg-[#121219] px-5 py-4 transition-all duration-300 focus-within:border-blue-500/40 focus-within:shadow-[0_0_30px_rgba(37,99,235,0.08)] sm:mt-10 sm:px-6 sm:py-5">
-            <Search
-              size={21}
-              strokeWidth={2}
-              className=" mr-4 shrink-0 text-[#72728b]"
-            />
+              <input
+                type="text"
+                placeholder="Search by name..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-transparent text-sm text-white outline-none placeholder:text-[#72728b] sm:text-base"
+              />
+            </div>
 
-            <input
-              type="text"
-              placeholder="Search by name..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-transparent text-sm text-white outline-none placeholder:text-[#72728b] sm:text-base"
-            />
+            {/* filter  */}
+            <div className="mt-8 flex items-center rounded-2xl border border-white/10 bg-[#121219] px-5 py-4 transition-all duration-300 focus-within:border-blue-500/40 focus-within:shadow-[0_0_30px_rgba(37,99,235,0.08)] sm:mt-10 sm:px-6 sm:py-5">
+              <select
+                value={selectedGame}
+                onChange={(e) => setSelectedGame(e.target.value)}
+                className="w-full w-full
+    px-4 py-3
+    rounded-xl
+    bg-transparent
+    text-gray-400
+    border-none
+    outline-none
+    focus:outline-none
+    focus:ring-0
+    cursor-pointer"
+              >
+                <option className="bg-gray-900 text-white outline-none" value="">
+                  Filter by game
+                </option>
+                <option value="PS5 Gaming" className="bg-gray-900 text-white">
+                  PS5 Gaming
+                </option>
+                <option value="Football" className="bg-gray-900 text-white">
+                  Football
+                </option>
+                <option value="Pool / Snooker" className="bg-gray-900 text-white">
+                  Pool / Snooker
+                </option>
+                <option value="Bowling" className="bg-gray-900 text-white">
+                  Bowling
+                </option>
+                <option value="Cricket" className="bg-gray-900 text-white">
+                  Cricket
+                </option>
+                <option value="Golf" className="bg-gray-900 text-white">
+                  Golf
+                </option>
+              </select>
+            </div>
           </div>
         </div>
 
         {/* CONNECT USER  */}
-        <Connect searchTerm = {searchTerm}/>
+        <Connect searchTerm={searchTerm}
+        selectedGame = {selectedGame} />
 
         {/* DIAGONAL DIVIDER */}
 
@@ -138,7 +181,9 @@ export default function Explore() {
             <h1 className="text-4xl text-center mb-10 font-black leading-[1.05] tracking-tight md:text-6xl lg:text-7xl bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
               GAMES
             </h1>
-            <h4 className="text-center lg:text-lg font-bold -mt-10 mb-10 text-sm text-white/30">WE SUPPORT</h4>
+            <h4 className="text-center lg:text-lg font-bold -mt-10 mb-10 text-sm text-white/30">
+              WE SUPPORT
+            </h4>
           </div>
 
           {/* GAME CARDS CONTAINER */}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 
-function Connect({searchTerm}) {
+function Connect({ searchTerm = "", selectedGame = "" }) {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -17,7 +17,9 @@ function Connect({searchTerm}) {
         const loggedUser = JSON.parse(localStorage.getItem("user"));
 
         //remove logged in user from the user's list display
-        const userList = data.users.filter((user) => user._id !== loggedUser?._id);
+        const userList = data.users.filter(
+          (user) => user._id !== loggedUser?._id,
+        );
         setUsers(userList);
       } else {
         setError("Failed to fetch users.");
@@ -35,11 +37,17 @@ function Connect({searchTerm}) {
     fetchUsers();
   }, []);
 
+const filteredUsers = users.filter((user) => {
+  const matchSearch = user.username
+    .toLowerCase()
+    .includes(searchTerm.toLowerCase());
 
-  //filtered user
-  const filteredUsers = users.filter((e) =>
-    e.username.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const matchGame =
+    selectedGame === "" ||
+    user.interests.includes(selectedGame.toLowerCase());
+
+  return matchSearch && matchGame;
+});
 
   return (
     <section className="relative mx-auto w-full max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
@@ -65,7 +73,7 @@ function Connect({searchTerm}) {
       )}
 
       {/* No Users */}
-      {!loading && !error && users.length === 0 && (
+      {!loading && !error && filteredUsers.length === 0 && (
         <div className="py-10 text-center text-white/50">No users found.</div>
       )}
 
