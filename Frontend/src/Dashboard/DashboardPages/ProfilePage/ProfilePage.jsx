@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import {Pencil , MapPin, Trophy} from 'lucide-react';
-
+import {getStoredUser} from "../../../utils/auth"
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
+  const loggedUser = getStoredUser();
   const [profile, setProfile] = useState({
-    name: 'Marcus T',
-    tagline: 'MT',
-    location: 'London, UK',
+    name: loggedUser?.username || "",
+    // tagline: 'MT',
+    location: loggedUser?.location || "",
     rating: 5,
     monthlyRank: '#1',
-    bio: 'I am marcusT . I am a Big Fan of virat kohli.',
-    interests: ['PS5 Gaming', 'Bowling', 'Football', 'Cricket'],
+    bio: loggedUser?.bio || "",
+    interests: loggedUser?.interests || [],
     matches: 18,
     connections: 18,
     rankPoints: '18',
