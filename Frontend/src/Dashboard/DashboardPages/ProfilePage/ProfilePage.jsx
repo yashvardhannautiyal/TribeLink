@@ -61,7 +61,7 @@ const ProfilePage = () => {
             className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-medium text-xs sm:text-sm px-5 py-2.5 rounded-lg shadow-lg shadow-orange-500/20 transition-all active:scale-95 hover:cursor-pointer"
           >
            <Pencil className="w-4 h-4 " />
-            {isEditing ? 'DONE EDITING' : 'EDIT PROFILE'}
+            {isEditing ? 'DONE EDITING' : 'EDIT BIO'}
           </button>
         </div>
 

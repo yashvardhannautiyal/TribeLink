@@ -170,5 +170,40 @@ const getCurrentUser = async(req, res) =>{
         });
     }
 }
-module.exports = {registerUser, loginUser, getCurrentUser};
+
+
+const updateCurrentUser = async(req, res) => {
+    try{
+        const{bio} = req.body;
+
+        const user = await User.findByIdAndUpdate(
+            req.user.userId,
+            {bio},
+            {
+                new: true,
+                runValidators: true,
+            }
+        ).select("-password");
+
+        if (!user) { //if user not found
+            return res.status(404).json({
+                message: "User not found",
+            });
+        }
+
+        res.status(200).json({ //update successful
+            message: "Profile updated successfully",
+            user,
+        });
+    }
+    // error 
+    catch(err){
+        console.error(err);
+
+        res.status(500).json({
+            message: "Server error",
+        });
+    }
+}
+module.exports = {registerUser, loginUser, getCurrentUser, updateCurrentUser};
 
